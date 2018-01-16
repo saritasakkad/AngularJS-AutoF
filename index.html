@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <title>AngularJS</title>
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.6/angular.min.js"></script>
+    <script src="angular-locale_fr-be.js"></script>
     <script src="main.js"></script>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
 </head>
@@ -13,22 +14,19 @@
 
 
    <div ng-controller="mainCtrl" class="container"> 
-       <table class="table">
-           <tr>
-               <th>Nom</th>
-               <th><button ng-click="sort('pts')">Pts {{arrow('pts')}}</button></th>
-               <th><button ng-click="sort('j')">J {{arrow('j')}}</button></th>
-               <th><button ng-click="sort('g')">G {{arrow('g')}}</button></th>
-               <th><button ng-click="sort('n')">N {{arrow('n')}}</button></th>
-           </tr>
-           <tr ng-repeat="team in teams">
-                <td>{{team.name}} </td>
-                <td>{{team.pts}} </td>
-                <td>{{team.j}} </td>
-                <td>{{team.g}} </td>
-                <td>{{team.n}} </td>
-           </tr>
-       </table>
+
+        {{users | filter: filterValue}}
+
+    <!-- {{value | number }} -->
+    <!-- {{value | number:2 }} -->
+    <!-- {{value | currency }} -->
+    <!-- {{value | currency:"$" }} -->
+    <!-- {{text | uppercase }} -->
+
+    <!-- {{date | date }} voir aussi https://docs.angularjs.org/api/ng/filter/date -->
+    <!-- {{date | date:'medium' }} -->
+    
+    
     </div> 
   
 
