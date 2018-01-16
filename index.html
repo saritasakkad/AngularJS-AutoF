@@ -16,18 +16,17 @@
        <table class="table">
            <tr>
                <th>Nom</th>
-               <th>Pts</th>
-               <th>J</th>
-               <th>G</th>
-               <th>N</th>
+               <th><button ng-click="sort('pts')">Pts {{arrow('pts')}}</button></th>
+               <th><button ng-click="sort('j')">J {{arrow('j')}}</button></th>
+               <th><button ng-click="sort('g')">G {{arrow('g')}}</button></th>
+               <th><button ng-click="sort('n')">N {{arrow('n')}}</button></th>
            </tr>
            <tr ng-repeat="team in teams">
-                <td>{{team.name}}</td>
-                <td>{{team.Pts}}</td>
-                <td>{{team.j}}</td>
-                <td>{{team.g}}</td>
-                <td>{{team.name}}</td>
-                <td>{{team.n}}</td>
+                <td>{{team.name}} </td>
+                <td>{{team.pts}} </td>
+                <td>{{team.j}} </td>
+                <td>{{team.g}} </td>
+                <td>{{team.n}} </td>
            </tr>
        </table>
     </div> 
