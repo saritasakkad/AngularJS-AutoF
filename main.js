@@ -1,10 +1,18 @@
 angular .module("app", [])
         .controller("mainCtrl", ["$scope", function($scope){
-            $scope.name = "Akkad";
-        }])
-        .controller("childCtrl", ["$scope", function($scope){
-            $scope.name = "le";
-        }])
-        .controller("grantCtrl", ["$scope", function($scope){
-            $scope.name = "king";
+            $scope.user = {
+                name: "Akkad",
+                age: 15,
+                email: "kad@gmail.com"
+            };
         }]);
+
+        //.controller("mainCtrl", ["$scope", function($scope){
+            //$scope.users = [
+
+               //     {name: "Akkad"},
+                //    {name: "c'est"},
+                //    {name: "the"},
+               //     {name: "King"}
+            //];
+       // }]);

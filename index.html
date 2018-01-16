@@ -8,21 +8,33 @@
 </head>
 <body>
 
-    <div ng-controller="mainCtrl"> 
-        {{name}} 
 
-            <div ng-controller="childCtrl"> 
-                 {{name}} 
-
-                 <div ng-controller="grantCtrl"> 
-                     {{name}} 
-                    
-                </div>
+        <div ng-controller="mainCtrl"> 
+                <ul>
+                    <li ng-repeat="(key, value) in user"> {{key}} : {{value}} 
+                        
+                    </li>
+                </ul>
+            </div>
         
-        </div>
 
-    </div>
-    
+
+   <!-- <div ng-controller="mainCtrl"> 
+        <ul>
+            <li ng-repeat="user in users"> {{user.name}} 
+                <ul>
+                    <li>Index :  {{$index}} </li>
+                    <li>Premier utilisateur ?  {{$first}} </li>
+                    <li>Dernier utilisateur ?  {{$last}} </li>
+                    <li>Index impair ?  {{$odd}} </li>
+                    <li>Index pair ?  {{$even}} </li>
+                </ul>
+            </li>
+        </ul>
+    </div> -- >
+
+
+       
     
 
 </body>
