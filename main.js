@@ -1,18 +1,10 @@
 angular .module("app", [])
         .controller("mainCtrl", ["$scope", function($scope){
-            $scope.user = {
-                name: "Akkad",
-                age: 15,
-                email: "kad@gmail.com"
-            };
-        }]);
+            $scope.users = [
 
-        //.controller("mainCtrl", ["$scope", function($scope){
-            //$scope.users = [
-
-               //     {name: "Akkad"},
-                //    {name: "c'est"},
-                //    {name: "the"},
-               //     {name: "King"}
-            //];
-       // }]);
+                   {name: "Akkad", email: "kad@gmail.com"},
+                   {name: "c'est", email: "cad@gmail.com"},
+                   {name: "the", email: "tad@gmail.com"},
+                   {name: "King", email: "kkad@gmail.com"}
+     ];
+ }]);
