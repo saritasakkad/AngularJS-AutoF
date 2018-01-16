@@ -8,7 +8,20 @@
 </head>
 <body>
 
-    <div ng-controller="mainCtrl"> {{name}} </div>
+    <div ng-controller="mainCtrl"> 
+        {{name}} 
+
+            <div ng-controller="childCtrl"> 
+                 {{name}} 
+
+                 <div ng-controller="grantCtrl"> 
+                     {{name}} 
+                    
+                </div>
+        
+        </div>
+
+    </div>
     
     
 
