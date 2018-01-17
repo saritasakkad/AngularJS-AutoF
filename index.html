@@ -16,7 +16,11 @@
    <div ng-controller="mainCtrl" class="container"> 
        <input ng-model="username">
 
-    <ul><li ng-repeat="user in users | filter: username | orderBy:'name':true"> {{user.name}} </li></ul>
+    <ul><li ng-repeat="user in users | filter: username | orderBy:order:reverse"> {{user.name}} </li>
+    
+        <button ng-click="inverser()">Inverser</button>
+    
+    </ul>
 
     <!-- <ul><li ng-repeat="user in users | filter: filterValue"> {{user.name}} </li></ul>avec ca aussi limitTo:2 et limitTo:limit a la place de filterValue -->
 

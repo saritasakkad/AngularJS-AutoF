@@ -12,7 +12,10 @@ angular .module('app', [])
 
               $scope.filterValue = {name: "Sam"};
 
-              $scope.limit = function() {
-                  return 2;
+              $scope.order = "name";
+              $scope.reverse = true;
+
+              $scope.inverser = function() {
+                  $scope.reverse = !$scope.reverse;
               }
  }])
