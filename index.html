@@ -24,7 +24,7 @@
                        <th><button ng-click="onSort('g')">G {{arrow('g')}}</button></th>
                        <th><button ng-click="onSort('n')">N {{arrow('n')}}</button></th>
                    </tr>
-                   <tr ng-repeat="team in teams | orderBy:sort:order[sort]">
+                   <tr ng-repeat="team in sliceTeam(teams) | orderBy:sort:order[sort]">
                         <td>{{team.name}} </td>
                         <td>{{team.pts}} </td>
                         <td>{{team.j}} </td>
@@ -32,6 +32,15 @@
                         <td>{{team.n}} </td>
                    </tr>
                </table>
+               <ul class="pagination">
+                   <li ng-repeat="p in pages track by $index"> 
+                       
+                    <a href="#" ng-click="onPage($index)">{{$index+1}} </a> 
+                       
+                    <!-- track by $index permet d'avoir un id -->
+
+                   </li>
+               </ul>
 
     </div> 
   
