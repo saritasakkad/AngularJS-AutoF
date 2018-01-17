@@ -14,19 +14,17 @@
 
 
    <div ng-controller="mainCtrl" class="container"> 
+        <select ng-model="selecUser" ng-options="user.name for user in users"> </select>
 
-        <input type="checkbox" ng-model="sampleCheckbox" ng-change="hasChanged()">
+        <input type="checkbox" ng-checked="selectUser.name == 'Sam'" ng-model="sampleChekbox" 
+        ng-true-value="'on'" ng-false-value="'off'">
 
-        {{sampleCheckbox}}
-
-        <!-- <input type="text" ng-model="username">
-
-        {{username}} -->
+            {{sampleChekbox}}
 
     </div> 
   
 
-       
+      
     
 
 </body>

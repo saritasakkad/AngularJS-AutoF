@@ -1,18 +1,18 @@
 angular .module('app', [])
         .controller('mainCtrl', ["$scope", function($scope){
        
-        $scope.sampleCheckbox = true;
+        
 
         $scope.hasChanged = function() {
             console.log("Changé");
         }
           
-            $scope.order = {
-                pts: true,
-                j: true,
-                g: true,
-                n:true
-            };
+            $scope.users = [
+                {name: "Sam", age: 26},
+                {name: "Jam", age: 46},
+                {name: "Kam", age: 16},
+                {name: "Lam", age: 76},
+            ];
 
            
 }]) 
