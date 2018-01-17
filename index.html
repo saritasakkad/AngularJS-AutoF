@@ -14,19 +14,15 @@
 
 
    <div ng-controller="mainCtrl" class="container"> 
+       <input ng-model="username">
 
-        {{users | filter: filterValue}}
+    <ul><li ng-repeat="user in users | filter: username | orderBy:'name':true"> {{user.name}} </li></ul>
 
-    <!-- {{value | number }} -->
-    <!-- {{value | number:2 }} -->
-    <!-- {{value | currency }} -->
-    <!-- {{value | currency:"$" }} -->
-    <!-- {{text | uppercase }} -->
+    <!-- <ul><li ng-repeat="user in users | filter: filterValue"> {{user.name}} </li></ul>avec ca aussi limitTo:2 et limitTo:limit a la place de filterValue -->
 
-    <!-- {{date | date }} voir aussi https://docs.angularjs.org/api/ng/filter/date -->
-    <!-- {{date | date:'medium' }} -->
-    
-    
+    <!-- croisant <ul><li ng-repeat="user in users | filter: username | orderBy:'name'"> {{user.name}} </li></ul> -->
+    <!-- décroisant <ul><li ng-repeat="user in users | filter: username | orderBy:'name':true"> {{user.name}} </li></ul> -->
+
     </div> 
   
 

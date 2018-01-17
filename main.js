@@ -11,4 +11,8 @@ angular .module('app', [])
               ];
 
               $scope.filterValue = {name: "Sam"};
+
+              $scope.limit = function() {
+                  return 2;
+              }
  }])
