@@ -14,13 +14,20 @@
 
 
    <div ng-controller="mainCtrl" class="container"> 
-        <select ng-model="selecUser" ng-options="user.name for user in users"> </select>
+        <form name="form">
+            <input type="text" ng-model="nameModel1" name="nameAttr1" required minlength="4">
+            <input type="text" ng-model="nameModel2" name="nameAttr2" required>
+            <button type="submit">ok</button>
+        </form>
+        <ul>
+            <li>Est ce requis ? {{form.nameAttr1.$error.required}}</li>
+            <li>Y a t-il 4 caractères ? {{form.nameAttr1.$error.minlength}}</li>
+        </ul>
+        <p>Premier champ : </p>
+        <p>Deuxième champ : {{form.nameAttr2.$invalid}}</p>
 
-        <input type="checkbox" ng-checked="selectUser.name == 'Sam'" ng-model="sampleChekbox" 
-        ng-true-value="'on'" ng-false-value="'off'">
-
-            {{sampleChekbox}}
-
+        <!-- {{form.$valid}} -->
+        <!-- {{form.$invalid}} -->
     </div> 
   
 
