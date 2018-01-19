@@ -14,16 +14,43 @@
 
 
    <div ng-controller="mainCtrl" class="container"> 
-        
 
 
-                         <ul ng-switch="myvar">
+    <label>Produit</label>
+        <select ng-model="product">
+            <option value="basic">basic</option>
+            <option value="pro">pro</option>
+        </select>
+
+        <input type="checkbox" ng-model="cgu"> Condition general utilisateur
+
+        <div ng-if="cgu">
+            Merci d'avoir accepté !
+        </div>
+
+
+        <div ng-switch="product">
+            <div ng-switch-when="basic">
+                    10 euros
+            </div>
+            <div ng-switch-when="pro">
+                   30 euros
+            </div>
+            <div ng-switch-default>
+                    selectionez un produit !
+            </div>
+
+
+        </div>
+
+
+                      <!--   <ul ng-switch="myvar">
                 
                             <li ng-switch-when="bar">element 1</li>
                             <li ng-switch-when="foo">element 2</li>
                             <li ng-switch-when="test">element 3</li>
                 
-                        </ul>
+                        </ul> -->
 
        <!-- <ul ng-switch="'foo'">
 
