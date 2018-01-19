@@ -14,15 +14,37 @@
 
 
    <div ng-controller="mainCtrl" class="container"> 
-        <form name="form">
-            <input type="text" ng-model="nameModel1" name="nameAttr1" required minlength="3" pattern="[0-9]+"> <!--expretion regulier : pattern="" des nombres : [0-9]+-->
-            
-            <button type="submit">ok</button>
-        </form>
-       
+        
 
-        <p>Champ : {{form.nameAttr1.$error}} </p>  <!-- ne permet pas d'ajouter plus de 3 lettre vu que c'est configurer a 3 lt $error -->
-        <!--le contrère de dirty  c'est $pristine <p>Champ : {{form.nameAttr1.$dirty}} </p> -->
+
+                         <ul ng-switch="myvar">
+                
+                            <li ng-switch-when="bar">element 1</li>
+                            <li ng-switch-when="foo">element 2</li>
+                            <li ng-switch-when="test">element 3</li>
+                
+                        </ul>
+
+       <!-- <ul ng-switch="'foo'">
+
+            <li ng-switch-when="bar">element 1</li>
+            <li ng-switch-when="foo">element 2</li>
+            <li ng-switch-when="test">element 3</li>
+
+        </ul> -->
+
+
+                <!-- show & hide, if -->
+        <!-- permet de montré l'info <p ng-show="true">Mon akkad</p> -->
+        <!-- permet de chacheé l'info <p ng-show="false">Mon akkad</p> -->
+
+         <!-- permet de montré l'info <p ng-hide="true">Mon akkad</p> -->
+         <!-- permet de chacheé l'info <p ng-hide="false">Mon akkad</p> -->
+
+         <!-- permet de montré l'info <p ng-if="true">Mon akkad</p> -->
+         <!-- permet de chacheé l'info <p ng-if="false">Mon akkad</p> -->
+
+        
     </div> 
   
 
