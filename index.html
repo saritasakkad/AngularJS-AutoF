@@ -7,6 +7,7 @@
     <script src="angular-locale_fr-be.js"></script>
     <script src="main.js"></script>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
@@ -16,62 +17,21 @@
    <div ng-controller="mainCtrl" class="container"> 
 
 
-    <label>Produit</label>
-        <select ng-model="product">
-            <option value="basic">basic</option>
-            <option value="pro">pro</option>
-        </select>
+            <select ng-init="" ng-options="color1 for color1 in colors" ng-model="color2"></select>
 
-        <input type="checkbox" ng-model="cgu"> Condition general utilisateur
+            <p ng-style="{color: color2}">Txt2</p>
 
-        <div ng-if="cgu">
-            Merci d'avoir accepté !
-        </div>
+        <input type="checkbox" ng-model="checkboxRed"> Mettre le txt en rouge
+        <input type="checkbox" ng-model="checkboxBold"> Mettre le txt en gras
 
+        <div ng-class="{red: checkboxRed, bold: checkboxBold}">kad</div>
+<br>
+        <div ng-style="{color: 'red'}">Akkad</div>
+        <div ng-class="'red'">Akkadou</div>
+        <div ng-class="['red', 'bold']">kkkAkkadoum</div>
+        <div ng-class="{red: true, bold: true}">kad</div>
+        <div ng-class="{red: true, bold: false}">kad</div>
 
-        <div ng-switch="product">
-            <div ng-switch-when="basic">
-                    10 euros
-            </div>
-            <div ng-switch-when="pro">
-                   30 euros
-            </div>
-            <div ng-switch-default>
-                    selectionez un produit !
-            </div>
-
-
-        </div>
-
-
-                      <!--   <ul ng-switch="myvar">
-                
-                            <li ng-switch-when="bar">element 1</li>
-                            <li ng-switch-when="foo">element 2</li>
-                            <li ng-switch-when="test">element 3</li>
-                
-                        </ul> -->
-
-       <!-- <ul ng-switch="'foo'">
-
-            <li ng-switch-when="bar">element 1</li>
-            <li ng-switch-when="foo">element 2</li>
-            <li ng-switch-when="test">element 3</li>
-
-        </ul> -->
-
-
-                <!-- show & hide, if -->
-        <!-- permet de montré l'info <p ng-show="true">Mon akkad</p> -->
-        <!-- permet de chacheé l'info <p ng-show="false">Mon akkad</p> -->
-
-         <!-- permet de montré l'info <p ng-hide="true">Mon akkad</p> -->
-         <!-- permet de chacheé l'info <p ng-hide="false">Mon akkad</p> -->
-
-         <!-- permet de montré l'info <p ng-if="true">Mon akkad</p> -->
-         <!-- permet de chacheé l'info <p ng-if="false">Mon akkad</p> -->
-
-        
     </div> 
   
 

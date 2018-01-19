@@ -1,7 +1,17 @@
 angular .module('app', [])
         .controller('mainCtrl', ["$scope", function($scope){
        
-        $scope.myvar = "foo";
+        $scope.colors = [
+                "black",
+                "red",
+                "blue",
+                "green",
+                "purple",
+                "cyan ",
+                "gold ",
+                "yellow",
+                "lime"
+        ];
 
            
 }]) 
