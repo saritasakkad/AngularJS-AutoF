@@ -9,16 +9,51 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
     <link rel="stylesheet" href="style.css">
 </head>
-  <body>
-    <div class="container" ng-controller="mainCtrl"> 
-   
-        <form>
-            <input type="text" required ng-model="username" 
-            minlength="4">
-            <button type="submit">ok</button>
-        </form>
+<body>
+   <div class="container" ng-controller="mainCtrl"> 
+    <ul class="nav nav-tabs">
 
+        <li ng-repeat="tab in tabs" ng-class="{active: isActive($index)}">
+
+            <a href="#" ng-click="setActive($index)">{{tab.title}} <span class="glyphicon glyphicon-remove" 
+
+                aria-hidden="true" ng-click="removeTab($index)"> </span></a>
+        </li>  
+    </ul>
+    <div class="tab-content">
+        {{tabs[active].content}}
+    </div>
+    <form class="form-inline" novalidate="" name="form" name="form"></form>
+    <div ng-if="submit && form.$invalid">
+       
+        <div ng-if="form.title.$invalid"></div>
+        <div ng-if="form.content.$invalid">
+
+            <ul>
+                <li ng-repeat="(type, error) in form.content">{{type}}</li>
+            </ul>
+
+        </div>
 
     </div>
- </body>
+    <h1>Gestion</h1>
+    
+
+        <div class="form-group">
+            <label>Non</label>
+            <input type="text" name="title" class="form-control" ng-model="name" 
+            name="title" required >
+        </div>
+        <div>
+            <label>Contenu</label>
+            <textarea name="content" class="form-control" ng-model="content" 
+            name="content" required></textarea>
+        </div>
+        <br>
+        <button class="btn btn-success" ng-click="addTab(form.$valid)"><span class="glyphicon glyphicon-plus" aria-hidden="true">
+            </span> Ajouter un onglet</button>
+    </form>
+    </div>
+
+</body>
 </html>

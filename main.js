@@ -11,6 +11,7 @@ app.controller('mainCtrl', function($scope){
         ];
 
         $scope.active = 0;
+        $scope.submit = false;
 
         $scope.setActive = function(index) {
                 $scope.active = index;
@@ -24,11 +25,17 @@ app.controller('mainCtrl', function($scope){
                 $scope.tabs.splice(index, 1);
         }
 
-        $scope.addTab = function() {
-                $scope.tabs.push({
-                        title: $scope.name,
-                        content: $scope.content
-                });
+        $scope.addTab = function(isValid) {
+                if (isValid) {
+
+                        $scope.tabs.push({
+                                title: $scope.name,
+                                content: $scope.content
+                        });
+
+                }
+                
+                $scope.submit = true;
         }
            
 }); 
