@@ -9,36 +9,16 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
     <link rel="stylesheet" href="style.css">
 </head>
-<body>
-   <div class="container" ng-controller="mainCtrl"> 
-    <ul class="nav nav-tabs">
+  <body>
+    <div class="container" ng-controller="mainCtrl"> 
+   
+        <form>
+            <input type="text" required ng-model="username" 
+            minlength="4">
+            <button type="submit">ok</button>
+        </form>
 
-        <li ng-repeat="tab in tabs" ng-class="{active: isActive($index)}">
 
-            <a href="#" ng-click="setActive($index)">{{tab.title}} <span class="glyphicon glyphicon-remove" 
-
-                aria-hidden="true" ng-click="removeTab($index)"> </span></a>
-        </li>  
-    </ul>
-    <div class="tab-content">
-        {{tabs[active].content}}
     </div>
-    <h1>Gestion</h1>
-    <form class="form-inline" novalidate="" name="form">
-
-        <div class="form-group">
-            <label>Non</label>
-            <input type="text" name="title" class="form-control" ng-model="name">
-        </div>
-        <div>
-            <label>Contenu</label>
-            <textarea name="content" class="form-control" ng-model="content"></textarea>
-        </div>
-        <br>
-        <button class="btn btn-success" ng-click="addTab()"><span class="glyphicon glyphicon-plus" aria-hidden="true">
-            </span> Ajouter un onglet</button>
-    </form>
-    </div>
-
-</body>
+ </body>
 </html>

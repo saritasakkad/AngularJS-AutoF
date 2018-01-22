@@ -5,3 +5,11 @@
 .bold {
     font-weight: bold;
 }
+
+input.ng-invalid-minlength {
+    background-color: red;
+}
+
+input.ng-valid {
+    background-color: green;
+}
